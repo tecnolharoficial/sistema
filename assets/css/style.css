@@ -647,6 +647,10 @@ button.unset {
     .folders {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .body .topbar ul li {
+        margin: unset;
+    }
 }
 
 @keyframes pulse {
