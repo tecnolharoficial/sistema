@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 `;
                 document.body.appendChild(modal);
-                new bootstrap.Modal($('#dateclick')).show();
+                new bootstrap.Modal(modal).show();
             },
             eventContent: function(arg) {
                 const startTime = arg.event.start.toLocaleTimeString([], {
