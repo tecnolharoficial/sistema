@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const day = String(date.getDate()).padStart(2, '0');
                 const data = `${day}/${month}/${year}`;
                 const modal = document.createElement('div');
-                modal.id = 'detalhes';
+                modal.id = 'dateclick';
                 modal.classList.add('modal', 'fade');
                 modal.innerHTML = `
                 <div class="modal-dialog modal-dialog-centered">
@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 `;
                 document.body.appendChild(modal);
-                new bootstrap.Modal($('#detalhes')).show();
+                new bootstrap.Modal($('#dateclick')).show();
             },
             eventContent: function(arg) {
                 const startTime = arg.event.start.toLocaleTimeString([], {
