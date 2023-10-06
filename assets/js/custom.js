@@ -218,6 +218,29 @@ $(document).ready(function() {
         }                   
     });
     //-----------------------------------------------------------------------------------
+
+    //Popular estado e cidade
+    $.getJSON(PATH + 'assets/json/estados_cidades.json', (data) => {
+        let items = [];
+        let options = '<option selected value disabled>Selecione o estado</option>';
+        for(val of data) {
+            options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+        }
+        $('#estado').html(options);
+        $('#estado').change( () => {
+            let options_cidades = '<option selected value disabled>Selecione a cidade</option>';
+            let str = $('#estado').val();
+            for(val of data) {
+                if(val.nome == str) {
+                    for(val_city of val.cidades) {
+                        options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+                    }
+                }
+            }
+            $('#cidade').html(options_cidades);
+        }).change();
+    });
+    //-----------------------------------------------------------------------------------
 });
 //-----------------------------------------------------------------------------------
 
