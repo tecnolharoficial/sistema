@@ -614,7 +614,7 @@ button.unset {
     top: 50%;
     transform: translateY(-50%);
     font-size: 250%;
-    opacity: 0.3;
+    opacity: 0.1;
 }
 
 @media (max-width: 991px) {
