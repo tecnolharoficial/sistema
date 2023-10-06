@@ -65,9 +65,25 @@
 										$variaveis = array();
 										foreach($matches[1] as $variavel) {
 											if(!in_array($variavel, $variaveis)) {
-												if($variavel == 'data') {
+												if(strtolower($variavel) == 'data') {
 ?>
 													<input type="hidden" name="data" value="<?php echo date('d/m/Y'); ?>">
+<?php
+												}
+												elseif(strtolower($variavel) == 'cpf' OR strtolower($variavel) == 'cnpj') {
+?>
+													<div class="form-floating mb-3">
+													  	<input type="text" id="<?php echo $variavel; ?>" class="form-control cpf_cnpj" placeholder="<?php echo $variavel; ?>" name="<?php echo $variavel; ?>">
+													  	<label for="<?php echo $variavel; ?>"><?php echo $variavel; ?></label>
+													</div>
+<?php
+												}
+												elseif(strtolower($variavel) == 'cep') {
+?>
+													<div class="form-floating mb-3">
+													  	<input type="text" id="<?php echo $variavel; ?>" class="form-control cep" placeholder="<?php echo $variavel; ?>" name="<?php echo $variavel; ?>">
+													  	<label for="<?php echo $variavel; ?>"><?php echo $variavel; ?></label>
+													</div>
 <?php
 												}
 												else {
