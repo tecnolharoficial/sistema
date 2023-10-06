@@ -86,7 +86,7 @@
 													</div>
 <?php
 												}
-												elseif(strtolower($variavel) == 'estado' OR strtolower($variavel) == 'cidade') {
+												elseif(strtolower($variavel) == 'estado' OR strtolower($variavel) == 'uf' OR strtolower($variavel) == 'cidade') {
 ?>
 													<div class="form-floating mb-3">
 													  	<select id="<?php echo $variavel; ?>" class="form-select" name="<?php echo $variavel; ?>"></select>
