@@ -617,6 +617,27 @@ button.unset {
     opacity: 0.1;
 }
 
+.form-order {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-order .cep_order {
+    order: 1;
+}
+
+.form-order .estado_order {
+    order: 2;
+}
+
+.form-order .cidade_order {
+    order: 3;
+}
+
+.form-order button {
+    order: 9999;
+}
+
 @media (max-width: 991px) {
     .sidebar {
         display: none;

@@ -41,7 +41,7 @@
 							<div class="page">
 								<h3 class="mb-4"><?php echo $arquivo_nome; ?></h3>
 								<div class="content">
-									<form method="GET">
+									<form method="GET" class="form-order">
 <?php
 										$texto = '';
 								        $customTempDir = realpath(__DIR__);
@@ -80,7 +80,7 @@
 												}
 												elseif(strtolower($variavel) == 'cep') {
 ?>
-													<div class="form-floating mb-3">
+													<div class="form-floating mb-3 cep_order">
 													  	<input type="text" id="<?php echo $variavel; ?>" class="form-control cep" placeholder="<?php echo $variavel; ?>" name="<?php echo $variavel; ?>">
 													  	<label for="<?php echo $variavel; ?>"><?php echo $variavel; ?></label>
 													</div>
@@ -88,7 +88,7 @@
 												}
 												elseif(strtolower($variavel) == 'estado' OR strtolower($variavel) == 'uf') {
 ?>
-													<div class="form-floating mb-3">
+													<div class="form-floating mb-3 estado_order">
 													  	<select id="estado" class="form-select" name="<?php echo $variavel; ?>"></select>
 														<label for="estado"><?php echo $variavel; ?></label>
 													</div>
@@ -96,7 +96,7 @@
 												}
 												elseif(strtolower($variavel) == 'cidade') {
 ?>
-													<div class="form-floating mb-3">
+													<div class="form-floating mb-3 cidade_order">
 													  	<select id="cidade" class="form-select" name="<?php echo $variavel; ?>"></select>
 														<label for="cidade"><?php echo $variavel; ?></label>
 													</div>
