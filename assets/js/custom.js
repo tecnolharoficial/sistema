@@ -449,11 +449,13 @@ document.addEventListener('DOMContentLoaded', function() {
 $(window).on('load resize', function() {
     if(window.innerWidth <= 768) {
         $('table thead tr th[class*="hide_mobile"], table tbody tr td[class*="hide_mobile"]').hide();
-        $('tbody tr').click(function() {
-            const tds = $(this).find('td');
+        $('tbody tr').off('click');
+        $('tbody tr').on('click', function() {
+            const $row = $(this);
+            const $tds = $row.find('td');
             let tds_conteudos = '';
-            tds.each(function(index) {
-                if(index > 0) {
+            $tds.each(function(index) {
+                if (index > 0) {
                     tds_conteudos += '<p><strong>' + $('thead th').eq(index).html() + ':</strong></p><p>' + $(this).html() + '</p>';
                     tds_conteudos += '<hr>';
                 }
@@ -461,17 +463,17 @@ $(window).on('load resize', function() {
             const modal = document.createElement('div');
             modal.classList.add('modal', 'fade');
             modal.innerHTML = `
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">${$(this).find('td:nth-child(1)').text()}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        ${tds_conteudos}
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">${$tds.eq(0).text()}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            ${tds_conteudos}
+                        </div>
                     </div>
                 </div>
-            </div>
             `;
             document.body.appendChild(modal);
             new bootstrap.Modal(modal).show();
@@ -479,6 +481,7 @@ $(window).on('load resize', function() {
     }
     else {
         $('table thead tr th[class*="hide_mobile"], table tbody tr td[class*="hide_mobile"]').show();
+        $('tbody tr').off('click');
     }
 });
 //-----------------------------------------------------------------------------------
