@@ -252,6 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             dateClick: function(info) {
+                $('#dateclick').remove();
                 const date = info.date;
                 const year = date.getFullYear();
                 const month = String(date.getMonth() + 1).padStart(2, '0');
