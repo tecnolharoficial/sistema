@@ -258,6 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const day = String(date.getDate()).padStart(2, '0');
                 const data = `${day}/${month}/${year}`;
                 const modal = document.createElement('div');
+                modal.id = 'detalhes';
                 modal.classList.add('modal', 'fade');
                 modal.innerHTML = `
                 <div class="modal-dialog modal-dialog-centered">
@@ -312,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 `;
                 document.body.appendChild(modal);
-                new bootstrap.Modal(modal).show();
+                new bootstrap.Modal($('#detalhes')).show();
             },
             eventContent: function(arg) {
                 const startTime = arg.event.start.toLocaleTimeString([], {
@@ -327,6 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             eventClick: function(info) {
                 const modal = document.createElement('div');
+                modal.id = 'detalhes';
                 modal.classList.add('modal', 'fade');
                 if(info.event.extendedProps.description != '') {
                     var description = `<p class="mb-3">${info.event.extendedProps.description}</p>`;
@@ -428,7 +430,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.appendChild(modal);
                 document.body.appendChild(segundoModal);
                 document.body.appendChild(terceiroModal);
-                new bootstrap.Modal(modal).show();
+                new bootstrap.Modal($('#detalhes')).show();
             }
         });
         /*
@@ -456,6 +458,7 @@ $(window).on('load resize', function() {
                 }
             });
             const modal = document.createElement('div');
+            modal.id = 'detalhes';
             modal.classList.add('modal', 'fade');
             modal.innerHTML = `
             <div class="modal-dialog modal-dialog-centered">
@@ -471,7 +474,7 @@ $(window).on('load resize', function() {
             </div>
             `;
             document.body.appendChild(modal);
-            new bootstrap.Modal(modal).show();
+            new bootstrap.Modal($('#detalhes')).show();
         });
     }
     else {
