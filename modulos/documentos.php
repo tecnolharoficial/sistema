@@ -86,11 +86,19 @@
 													</div>
 <?php
 												}
-												elseif(strtolower($variavel) == 'estado' OR strtolower($variavel) == 'uf' OR strtolower($variavel) == 'cidade') {
+												elseif(strtolower($variavel) == 'estado' OR strtolower($variavel) == 'uf') {
 ?>
 													<div class="form-floating mb-3">
-													  	<select id="<?php echo $variavel; ?>" class="form-select" name="<?php echo $variavel; ?>"></select>
-														<label for="<?php echo $variavel; ?>"><?php echo $variavel; ?></label>
+													  	<select id="estado" class="form-select" name="<?php echo $variavel; ?>"></select>
+														<label for="estado"><?php echo $variavel; ?></label>
+													</div>
+<?php
+												}
+												elseif(strtolower($variavel) == 'cidade') {
+?>
+													<div class="form-floating mb-3">
+													  	<select id="cidade" class="form-select" name="<?php echo $variavel; ?>"></select>
+														<label for="cidade"><?php echo $variavel; ?></label>
 													</div>
 <?php
 												}
