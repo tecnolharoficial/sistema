@@ -85,17 +85,20 @@ $(document).ready(function() {
     });
     //-----------------------------------------------------------------------------------
 
-    //Abrir sidebar no mobile
-    $('body').on('click', '.sidebar_toggle', function() {
-        $('body').append('<div class="modal-backdrop fade show"></div>');
-        $('.sidebar').toggle();
-    });
+    //Função para fechar o sidebar quando houver um clique fora dele
+    function fecharSidebarForaClick(event) {
+        if(!$('.sidebar').is(event.target) && $('.sidebar').has(event.target).length === 0) {
+            $('.sidebar').hide();
+            $(document).off('click', fecharSidebarForaClick);
+        }
+    }
     //-----------------------------------------------------------------------------------
 
-    //Fechar sidebar ao clicar no modal backdrop
-    $('body').on('click', '.modal-backdrop', function() {
-        $(this).remove();
-        $('.sidebar').hide();
+    //Adicionar um ouvinte de eventos de clique ao elemento 'body' para abrir o sidebar
+    $('body').on('click', '.sidebar_toggle', function(event) {
+        event.stopPropagation();
+        $('.sidebar').toggle();
+        $(document).on('click', fecharSidebarForaClick);
     });
     //-----------------------------------------------------------------------------------
 
@@ -252,14 +255,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             dateClick: function(info) {
-                $('#dateclick').remove();
                 const date = info.date;
                 const year = date.getFullYear();
                 const month = String(date.getMonth() + 1).padStart(2, '0');
                 const day = String(date.getDate()).padStart(2, '0');
                 const data = `${day}/${month}/${year}`;
                 const modal = document.createElement('div');
-                modal.id = 'dateclick';
                 modal.classList.add('modal', 'fade');
                 modal.innerHTML = `
                 <div class="modal-dialog modal-dialog-centered">
@@ -329,7 +330,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             eventClick: function(info) {
                 const modal = document.createElement('div');
-                modal.id = 'detalhes';
                 modal.classList.add('modal', 'fade');
                 if(info.event.extendedProps.description != '') {
                     var description = `<p class="mb-3">${info.event.extendedProps.description}</p>`;
@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.appendChild(modal);
                 document.body.appendChild(segundoModal);
                 document.body.appendChild(terceiroModal);
-                new bootstrap.Modal($('#detalhes')).show();
+                new bootstrap.Modal(modal).show();
             }
         });
         /*
@@ -459,7 +459,6 @@ $(window).on('load resize', function() {
                 }
             });
             const modal = document.createElement('div');
-            modal.id = 'detalhes';
             modal.classList.add('modal', 'fade');
             modal.innerHTML = `
             <div class="modal-dialog modal-dialog-centered">
@@ -475,7 +474,7 @@ $(window).on('load resize', function() {
             </div>
             `;
             document.body.appendChild(modal);
-            new bootstrap.Modal($('#detalhes')).show();
+            new bootstrap.Modal(modal).show();
         });
     }
     else {
