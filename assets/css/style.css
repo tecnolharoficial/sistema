@@ -391,6 +391,11 @@ button.unset {
     z-index: 999;
 }
 
+.modal .dropdown-toggle {
+    width: 100%;
+    display: block;
+}
+
 .modal-content {
     border-radius: 8px;
 }
