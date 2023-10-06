@@ -631,6 +631,14 @@ button.unset {
         gap: 10px;
     }
 
+    .fc .fc-col-header-cell-cushion {
+        padding: 5px;
+    }
+
+    .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+        min-height: unset;
+    }
+
     .folders {
         grid-template-columns: repeat(2, 1fr);
     }
