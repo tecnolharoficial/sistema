@@ -211,7 +211,7 @@
 ?>
 		<div class="sidebar">
 			<div class="text-center">
-				<img src="https://www.tecnolhar.com.br/sistema/assets/img/geral/logo.png" class="logo">
+				<img src="<?php echo PATH.'assets/img/logo.png'; ?>" class="logo">
 			</div>
 			<hr>
 			<ul>
@@ -250,7 +250,7 @@
 								<div class="dropdown">
 				                    <a class="dropdown-toggle" data-bs-toggle="dropdown">
 										<span class="me-2"><?php echo 'Olá '.$GLOBALS['usuario_logado_nome']; ?></span>
-										<img src="https://www.tecnolhar.com.br/sistema/assets/img/geral/no-photo.png" width="25" height="25" class="rounded-circle">
+										<img src="<?php echo PATH.'assets/img/no-photo.png'; ?>" width="25" height="25" class="rounded-circle">
 									</a>
 									<ul class="dropdown-menu">
 										<li><a class="dropdown-item" href="<?php echo PATH.'minha-conta/'; ?>"><i class="fa-solid fa-user"></i> Minha Conta</a></li>

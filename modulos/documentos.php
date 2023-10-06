@@ -158,7 +158,7 @@
 														</div>
 													</div>
 													<a <?php if($conteudo->form == 'on') { echo 'href="'.PATH.'modulos/documentos/?file='.$conteudo->id.'"'; } else { echo 'href="'.PATH.'assets/files/'.$conteudo->file.'" download="'.$file_nome.'"'; } ?>>
-														<img src="https://images.freeimages.com/fic/images/icons/1011/shined/250/file.png">
+														<img src="<?php echo PATH.'assets/img/file.png'; ?>">
 														<span><?php echo $conteudo->nome; ?></span>
 													</a>
 												</div>
@@ -285,7 +285,7 @@
 														</div>
 													</div>
 													<a href="<?php echo PATH.'modulos/documentos/?pasta='.$conteudo->id; ?>">
-														<img src="https://png.pngtree.com/png-vector/20220823/ourmid/pngtree-folder-icon-sign-data-vector-png-image_33404338.png">
+														<img src="<?php echo PATH.'assets/img/folder.png'; ?>">
 														<span><?php echo $conteudo->nome; ?></span>
 													</a>
 												</div>
