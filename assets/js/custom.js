@@ -95,7 +95,7 @@ $(document).ready(function() {
     //Fechar sidebar ao clicar no modal backdrop
     $('body').on('click', '.modal-backdrop', function() {
         $(this).remove();
-        $('.sidebar').toggle();
+        $('.sidebar').hide();
     });
     //-----------------------------------------------------------------------------------
 
