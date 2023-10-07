@@ -604,6 +604,7 @@ button.unset {
 }
 
 .box strong {
+    display: block;
     color: #fff;
     white-space: nowrap;
     font-size: 18px;
