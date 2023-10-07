@@ -18,42 +18,42 @@
 						<div class="col-lg-2 mb-3">
 							<div class="box bg-success">
 								<span>Á Receber</span>
-								<h5 class="m-0"><?php echo formatar_reais(somar_valores_financeiro(1)); ?></h5>
+								<strong class="m-0"><?php echo formatar_reais(somar_valores_financeiro(1)); ?></strong>
 								<i class="fa-solid fa-money-bill-trend-up"></i>
 							</div>
 						</div>
 						<div class="col-lg-2 mb-3">
 							<div class="box bg-success">
 								<span>Recebido</span>
-								<h5 class="m-0"><?php echo formatar_reais(somar_valores_financeiro(2)); ?></h5>
+								<strong class="m-0"><?php echo formatar_reais(somar_valores_financeiro(2)); ?></strong>
 								<i class="fa-solid fa-money-bill-trend-up"></i>
 							</div>
 						</div>
 						<div class="col-lg-2 mb-3">
 							<div class="box bg-danger">
 								<span>Á Pagar</span>
-								<h5 class="m-0"><?php echo formatar_reais(somar_valores_financeiro(3)); ?></h5>
+								<strong class="m-0"><?php echo formatar_reais(somar_valores_financeiro(3)); ?></strong>
 								<i class="fa-solid fa-money-bill-trend-up"></i>
 							</div>
 						</div>
 						<div class="col-lg-2 mb-3">
 							<div class="box bg-danger">
 								<span>Pago</span>
-								<h5 class="m-0"><?php echo formatar_reais(somar_valores_financeiro(4)); ?></h5>
+								<strong class="m-0"><?php echo formatar_reais(somar_valores_financeiro(4)); ?></strong>
 								<i class="fa-solid fa-money-bill-trend-up"></i>
 							</div>
 						</div>
 						<div class="col-lg-2 mb-3">
 							<div class="box bg-primary">
 								<span>Saldo Atual</span>
-								<h5 class="m-0"><?php echo formatar_reais((somar_valores_financeiro(2) - somar_valores_financeiro(4))); ?></h5>
+								<strong class="m-0"><?php echo formatar_reais((somar_valores_financeiro(2) - somar_valores_financeiro(4))); ?></strong>
 								<i class="fa-solid fa-money-bill-trend-up"></i>
 							</div>
 						</div>
 						<div class="col-lg-2 mb-3">
 							<div class="box text-dark bg-warning">
 								<span>Previsão</span>
-								<h5 class="m-0 text-dark"><?php echo formatar_reais((somar_valores_financeiro(1) + somar_valores_financeiro(2)) - (somar_valores_financeiro(3) + somar_valores_financeiro(4))); ?></h5>
+								<strong class="m-0 text-dark"><?php echo formatar_reais((somar_valores_financeiro(1) + somar_valores_financeiro(2)) - (somar_valores_financeiro(3) + somar_valores_financeiro(4))); ?></strong>
 								<i class="fa-solid fa-money-bill-trend-up"></i>
 							</div>
 						</div>

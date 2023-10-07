@@ -603,9 +603,10 @@ button.unset {
     color: #fff;
 }
 
-.box h5 {
+.box strong {
     color: #fff;
     white-space: nowrap;
+    font-size: 18px;
 }
 
 .box i {
