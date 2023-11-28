@@ -1,5 +1,5 @@
 //Raiz
-var PATH = window.location.protocol + '//' + window.location.host + '/sistema/';
+var PATH = window.location.protocol + '//' + window.location.host + '/';
 var currentPageBase = window.location.pathname;
 //-----------------------------------------------------------------------------------
 
