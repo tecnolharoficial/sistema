@@ -1,6 +1,6 @@
 <?php
 	//Raiz
-	define('PATH', '/sistema/');
+	define('PATH', '/');
 	define('ROOT', $_SERVER['DOCUMENT_ROOT'].PATH);
 	//-----------------------------------------------------------------------------------
 
