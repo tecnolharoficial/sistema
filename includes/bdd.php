@@ -22,7 +22,7 @@
 
     //Conexão com o banco de dados
     try {
-        $bdd = new PDO('mysql:host=localhost;dbname=tecnolha_tecnolhar_sistema;charset=utf8', 'tecnolha_tecnolhar_sistema', 'xX40028922');
+        $bdd = new PDO('mysql:host=localhost;dbname=tecnolha_sistema;charset=utf8', 'tecnolha_sistema', 'xX40028922');
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch(PDOException $error) {
